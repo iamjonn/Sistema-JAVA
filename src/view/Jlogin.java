@@ -27,7 +27,7 @@ public class Jlogin extends JFrame {
 			public void run() {
 				try {
 					Jlogin frame = new Jlogin();
-					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);				frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -67,6 +67,7 @@ public class Jlogin extends JFrame {
 		panel.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("ENTRAR");
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(0, 64, 64));
 		btnNewButton.setBounds(119, 176, 89, 23);
 		panel.add(btnNewButton);
