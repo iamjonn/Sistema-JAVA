@@ -79,9 +79,14 @@ public class Jlogin extends JFrame {
 						!textFieldUsuario.getText().isEmpty() && 
 						passwordField.getText()!=null &&
 						!passwordField.getText().isEmpty()){ 
-					JOptionPane.showConfirmDialog(btnNewButton, "informaçoes validas");
+					JOptionPane.showMessageDialog(btnNewButton, "informaçoes validas");
+					dispose();
+					Jprincipal jprincipal = new Jprincipal();
+					jprincipal.setLocationRelativeTo(jprincipal);
+					jprincipal.setVisible(true);
+					
 				}else {
-					JOptionPane.showConfirmDialog(btnNewButton, "Verifique as informaçoes", "Aviso", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(btnNewButton, "Verifique as informaçoes", "Aviso", JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});
