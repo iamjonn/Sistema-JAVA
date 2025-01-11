@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,12 +12,16 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 
+import model.Cliente;
+import model.ModeloTabela;
+
 public class Jprincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTable table;
+	private ArrayList<Cliente> clientes;
 
 	/**
 	 * Launch the application.
@@ -39,6 +44,9 @@ public class Jprincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public Jprincipal() {
+		clientes = new ArrayList<>();
+		clientes.add(new Cliente("1", "joao","joao@email.com","999.999.999-99","99999-9999","Nao informado"));
+		clientes.add(new Cliente("2", "maria","maria@email.com","999.999.999-99","99999-9999","Nao informado"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 767, 489);
 		contentPane = new JPanel();
@@ -60,14 +68,12 @@ public class Jprincipal extends JFrame {
 		scrollPane.setBounds(68, 95, 634, 317);
 		contentPane.add(scrollPane);
 		
+		ModeloTabela modeloTabela = new ModeloTabela(clientes);
+		
+		
 		table = new JTable();
+		table.setModel(modeloTabela);
 		scrollPane.setViewportView(table);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"ID", "CPF/CNPJ", "Nome", "E-mail", "Telefone", "endere\u00E7o"
-			}
-		));
+		
 	}
 }
