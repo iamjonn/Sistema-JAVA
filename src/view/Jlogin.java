@@ -78,12 +78,13 @@ public class Jlogin extends JFrame {
 		JButton btnNewButton = new JButton("ENTRAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Criptografia criptografia = new Criptografia("123456", Criptografia.MD5);
+				Criptografia criptografia = new Criptografia(passwordField.getText(), Criptografia.MD5);
 				System.out.println(criptografia.criptografar());
 				if(textFieldUsuario.getText() != null && 
 						!textFieldUsuario.getText().isEmpty() && 
 						passwordField.getText()!=null &&
 						!passwordField.getText().isEmpty()){ 
+					if(criptografia.criptografar().equals("E10ADC3949BA59ABBE56E057F20F883E")) {
 					JOptionPane.showMessageDialog(btnNewButton, "informaçoes validas");
 					dispose();
 					Jprincipal jprincipal = new Jprincipal();
