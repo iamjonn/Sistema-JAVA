@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.Criptografia;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -75,6 +78,8 @@ public class Jlogin extends JFrame {
 		JButton btnNewButton = new JButton("ENTRAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Criptografia criptografia = new Criptografia("123456", Criptografia.MD5);
+				System.out.println(criptografia.criptografar());
 				if(textFieldUsuario.getText() != null && 
 						!textFieldUsuario.getText().isEmpty() && 
 						passwordField.getText()!=null &&

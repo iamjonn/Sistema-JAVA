@@ -33,7 +33,7 @@ public class Criptografia {
 		this.padrao = padrao;
 	}
 	
-	public String criptografia() {
+	public String criptografar() {
 		String informacao = getInformacao();
 		
 		MessageDigest messageDigest;
