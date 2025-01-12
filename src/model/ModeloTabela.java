@@ -58,3 +58,12 @@ public class ModeloTabela extends AbstractTableModel {
 		return colunas[column];
 	}
 }
+
+
+
+
+
+
+
+
+//01101010 01101111 01101110 
